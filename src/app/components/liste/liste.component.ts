@@ -33,6 +33,11 @@ export class ListeComponent implements OnInit, AfterViewInit {
       this.selected = null;
       this.openDetail = false;
     });
+
+    this.ngxSmartModalService.getModal('editPlayer').onAnyCloseEventFinished.subscribe(() => {
+      this.openEdit = false;
+      this.editedJoueur = null;
+    });
   }
 
   loadJoueurs() {
@@ -51,4 +56,13 @@ export class ListeComponent implements OnInit, AfterViewInit {
     const id = this.joueurs.findIndex(j => j.id === this.selected.id);
     this.joueurs[id].absent = event;
   }
+
+  public openEditForm(j?: Joueur) {
+    if (j) {
+      this.editedJoueur = j;
+    }
+    this.openEdit = true;
+    this.ngxSmartModalService.open('editPlayer');
+  }
+
 }
