@@ -13,6 +13,12 @@ const routes: Routes = [
   },
   {
     path: 'creer-un-joueur',
+    canActivate: [AuthGuard],
+    component: NouveauJoueurComponent
+  },
+  {
+    path: 'edit/:id',
+    canActivate: [AuthGuard],
     component: NouveauJoueurComponent
   },
   {

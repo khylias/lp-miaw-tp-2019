@@ -42,9 +42,9 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-flat-button color="primary" type="button" (click)="select(joueur)">Détails</button>
-      <button mat-flat-button color="primary" type="button" (click)="openEditForm(joueur)">
+      <a mat-flat-button [routerLink]="'../edit/' + joueur.id" color="primary" type="button">
         <mat-icon>edit</mat-icon>
-      </button>
+      </a>
     </mat-card-actions>
   </mat-card>
 </section>
