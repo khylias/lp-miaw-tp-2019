@@ -25,11 +25,11 @@
         <mat-icon>keyboard_arrow_right</mat-icon>
       </button>
     </div>
-    <button mat-fab (click)="openEditForm()">
+    <a mat-fab routerLink="../creer-un-joueur">
       <mat-icon>
         add
       </mat-icon>
-    </button>
+    </a>
   </mat-toolbar-row>
 </mat-toolbar>
 <section class="container">
@@ -51,8 +51,4 @@
 
 <ngx-smart-modal identifier="detailsModal">
   <app-details [joueurSelectionne]="selected" *ngIf="openDetail" (changeState)="setPresentState($event)"></app-details>
-</ngx-smart-modal>
-
-<ngx-smart-modal identifier="editPlayer">
-  <app-nouveau-joueur *ngIf="openEdit" [joueur]="editedJoueur"></app-nouveau-joueur>
 </ngx-smart-modal>

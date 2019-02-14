@@ -7,10 +7,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 import { ListeComponent } from './liste.component';
 import { DetailsModule } from './details/details.module';
-import { NouveauJoueurModule } from '../nouveau-joueur/nouveau-joueur.module';
 import { ApiModule } from './../../modules';
 
 import { NgxSmartModalModule } from 'ngx-smart-modal';
@@ -19,6 +19,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
@@ -30,8 +31,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     NgxSmartModalModule.forChild(),
 
     DetailsModule,
-    ApiModule,
-    NouveauJoueurModule
+    ApiModule
   ],
   declarations: [ListeComponent],
   exports: [ListeComponent]

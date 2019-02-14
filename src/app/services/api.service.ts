@@ -44,4 +44,8 @@ export class ApiService {
   updatePlayer(id, data): Observable<any> {
     return this.http.patch('http://localhost:3000/joueurs/' + id, data);
   }
+
+  login(id: string, password: string): Observable<any> {
+    return this.http.post('http://localhost:3000/login', { email: id, password: password });
+  }
 }
