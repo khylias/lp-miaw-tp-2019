@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { registerLocaleData, CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import localeFr from '@angular/common/locales/fr';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

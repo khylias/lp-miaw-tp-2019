@@ -33,11 +33,6 @@ export class ListeComponent implements OnInit, AfterViewInit {
       this.selected = null;
       this.openDetail = false;
     });
-
-    this.ngxSmartModalService.getModal('editPlayer').onAnyCloseEventFinished.subscribe(() => {
-      this.openEdit = false;
-      this.editedJoueur = null;
-    });
   }
 
   loadJoueurs() {
