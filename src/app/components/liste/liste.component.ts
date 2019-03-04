@@ -51,13 +51,4 @@ export class ListeComponent implements OnInit, AfterViewInit {
     const id = this.joueurs.findIndex(j => j.id === this.selected.id);
     this.joueurs[id].absent = event;
   }
-
-  public openEditForm(j?: Joueur) {
-    if (j) {
-      this.editedJoueur = j;
-    }
-    this.openEdit = true;
-    this.ngxSmartModalService.open('editPlayer');
-  }
-
 }
