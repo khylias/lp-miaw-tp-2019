@@ -13,14 +13,16 @@ import { Joueur } from './../../models';
 export class NouveauJoueurComponent implements OnInit {
   form: FormGroup;
   joueurId: string;
-  @Input() joueur: Joueur;
-
+  joueur: Joueur;
   constructor(private fb: FormBuilder, private apiService: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.joueurId = this.route.url['value'][0].path === 'edit' ?
       this.route.url['value'][this.route.url['value'].length - 1].path : null;
-    this.loadJoueur();
+
+    if (this.joueurId) {
+      this.loadJoueur();
+    }
     this.loadForm();
   }
 

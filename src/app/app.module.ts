@@ -27,6 +27,7 @@ registerLocaleData(localeFr, 'fr');
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    BrowserModule.withServerTransition({appId: 'lp-miaw'}),
 
     NgxSmartModalModule.forRoot(),
 
