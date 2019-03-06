@@ -8,7 +8,9 @@ import localeFr from '@angular/common/locales/fr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListeModule } from './components/liste/liste.module';
-import { TokenStorageService } from './services/token-storage.service';
+import { LoginModule } from './components/login/login.module';
+import { NouveauJoueurModule } from './components/nouveau-joueur/nouveau-joueur.module';
+import { TokenStorageService } from './services';
 import { AppInterceptorService } from './services/app-interceptor.service';
 
 import { NgxSmartModalModule } from 'ngx-smart-modal';
@@ -28,7 +30,9 @@ registerLocaleData(localeFr, 'fr');
 
     NgxSmartModalModule.forRoot(),
 
-    ListeModule
+    ListeModule,
+    LoginModule,
+    NouveauJoueurModule
   ],
   providers: [
     {

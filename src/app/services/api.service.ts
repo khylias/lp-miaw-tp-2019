@@ -37,11 +37,26 @@ export class ApiService {
     return this.http.get<Joueur[]>('http://localhost:3000/joueurs', options);
   }
 
+  getDataById(id): Observable<Joueur> {
+    const httpParams = {};
+
+    httpParams['id'] = id;
+
+    const options = {
+      params: httpParams
+    };
+    return this.http.get<Joueur>('http://localhost:3000/joueurs', options);
+  }
+
   addPlayer(data): Observable<any> {
     return this.http.post('http://localhost:3000/joueurs', data);
   }
 
   updatePlayer(id, data): Observable<any> {
     return this.http.patch('http://localhost:3000/joueurs/' + id, data);
+  }
+
+  login(id: string, password: string): Observable<any> {
+    return this.http.post('http://localhost:3000/login', { email: id, password: password });
   }
 }
