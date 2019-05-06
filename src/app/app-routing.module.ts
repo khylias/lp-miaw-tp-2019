@@ -8,7 +8,6 @@ import { NouveauJoueurComponent } from './components/nouveau-joueur/nouveau-joue
 const routes: Routes = [
   {
     path: 'accueil',
-    canActivate: [AuthGuard],
     component: ListeComponent
   },
   {

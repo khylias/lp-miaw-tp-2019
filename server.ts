@@ -1,23 +1,23 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
-// const domino = require('domino');
-// const win = domino.createWindow('<body></body>');
+const domino = require('domino');
+const win = domino.createWindow('<body></body>');
 
-// win['screen'] = { deviceXDPI: 1, logicalXDPI: 1 };
-// win['scrollTo'] = function() {};
+win['screen'] = { deviceXDPI: 1, logicalXDPI: 1 };
+win['scrollTo'] = function() {};
 
-// global['window'] = win;
-// Object.defineProperty(win.document.body.style, 'transform', {
-//   value: () => {
-//     return {
-//       enumerable: true,
-//       configurable: true,
-//     };
-//   },
-// });
-// global['document'] = win.document;
-// global['navigator'] = win.navigator;
+global['window'] = win;
+Object.defineProperty(win.document.body.style, 'transform', {
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true,
+    };
+  },
+});
+global['document'] = win.document;
+global['navigator'] = win.navigator;
 
 import { enableProdMode } from '@angular/core';
 // Express Engine
